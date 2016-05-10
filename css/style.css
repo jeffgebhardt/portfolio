@@ -29,3 +29,9 @@ header img{
 .mainNav img{
   max-width: 2em;
 }
+.sideBar img{
+  max-width: 8em;
+}
+.sideBar h3{
+  text-align: center;
+}
