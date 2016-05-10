@@ -1,0 +1,34 @@
+body {
+    text-align: center;
+}
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+.mainContent {
+    width: 80%;
+    display: inline-block;
+    text-align: left;
+}
+.sideBar {
+    float: right;
+    width: 20%;
+}
+.mainNav li {
+    display: inline-block;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+header img{
+  max-width: 12em;
+  float: left;
+}
+header h1{
+  display: inline-block;
+}
+header h3{
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 1em;
+}
