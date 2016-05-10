@@ -10,9 +10,6 @@ body {
     display: inline-block;
     text-align: center;
 }
-/*nav{
-  text-align: center;
-}*/
 .mainNav ul{
   text-align: center;
 }
@@ -31,4 +28,11 @@ header img{
 }
 .socialIcons img{
   max-width: 2em;
+}
+
+.socialIcons{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 5%;
 }
