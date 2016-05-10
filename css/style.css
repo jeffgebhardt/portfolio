@@ -20,5 +20,7 @@ nav{
     list-style: none;
 }
 header img{
-  max-width: 10em;
+  max-width: 8em;
+  padding-left: 2%;
+  border-radius: 15px;
 }
