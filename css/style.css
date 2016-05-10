@@ -10,17 +10,25 @@ body {
     display: inline-block;
     text-align: center;
 }
-nav{
+/*nav{
+  text-align: center;
+}*/
+.mainNav ul{
   text-align: center;
 }
 .mainNav li {
     list-style: none;
+    margin-right: 2em;
 }
 .sideBar li {
     list-style: none;
+    margin-right: 2em;
 }
 header img{
   max-width: 8em;
   padding-left: 2%;
   border-radius: 15px;
+}
+.socialIcons img{
+  max-width: 2em;
 }
