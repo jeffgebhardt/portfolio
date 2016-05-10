@@ -26,13 +26,6 @@ header img{
   padding-left: 2%;
   border-radius: 15px;
 }
-.socialIcons img{
+.mainNav img{
   max-width: 2em;
-}
-
-.socialIcons{
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 5%;
 }

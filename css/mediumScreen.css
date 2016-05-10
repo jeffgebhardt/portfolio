@@ -32,9 +32,9 @@ header h3{
   margin-left: 1em;
   margin-right: 1em;
 }
-.socialIcons img{
-  max-width: 2em;
-  margin-left: auto;
-  margin-right: auto;
+.socialIcons{
   display: block;
+}
+.mainNav img{
+  max-width: 3em;
 }
