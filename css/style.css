@@ -1,22 +1,24 @@
-body{
+body {
+    text-align: center;
+}
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+.mainContent {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+nav{
   text-align: center;
 }
-
-.container{
-  margin: 0 auto;
-  width: 90%;
+.mainNav li {
+    list-style: none;
 }
-
-.mainContent{
-  width: 100%;
-  display: inline-block;
-  text-align: left;
+.sideBar li {
+    list-style: none;
 }
-
-.mainNav li{
-  list-style: none;
-}
-
-.sideBar li{
-  list-style: none;
+header img{
+  max-width: 10em;
 }
