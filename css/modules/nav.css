@@ -4,6 +4,8 @@
 .mainNav li {
     list-style: none;
     margin-right: 2em;
+    margin-bottom: .5em;
+    vertical-align: middle;
 }
 .mainNav img{
   max-width: 2em;

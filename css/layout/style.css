@@ -1,10 +1,12 @@
-.mainContent {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-}
+/*header*/
 header img{
   max-width: 8em;
   padding-left: 2%;
   border-radius: 15px;
+}
+/*Main Content*/
+.mainContent {
+  width: 100%;
+  display: inline;
+  text-align: center;
 }

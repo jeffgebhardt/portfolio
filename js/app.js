@@ -1,3 +1,4 @@
+// Populate Project
 var projects = [];
 
 function Project(opts){
@@ -22,4 +23,22 @@ thumbnailData.forEach(function(ele) {
 
 projects.forEach(function(p){
   $('#projects').append(p.toHtml());
+});
+
+// Switch Views
+handleMainNav = function() {
+  $('.mainNav').on('click', '.tab', function(){
+    var val = $(this).attr('data-content');
+    $('.tab-content').hide();
+    $('.tab-content').each(function(index){
+      if($(this).attr('id') === val){
+        $(this).fadeIn(2000);
+      }
+    });
+  });
+};
+
+// Call Functions
+$(document).ready(function(){
+  handleMainNav();
 });
