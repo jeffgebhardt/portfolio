@@ -1,0 +1,28 @@
+header img{
+  max-width: 12em;
+  float: left;
+}
+header h1{
+  display: inline-block;
+}
+header h3{
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.mainContent {
+    width: 75%;
+    text-align: left;
+}
+.mainNav li {
+    display: inline-block;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.mainNav img{
+  max-width: 3em;
+}
+.sideBar {
+  float: right;
+  width: 25%;
+}

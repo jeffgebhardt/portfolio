@@ -1,0 +1,10 @@
+.sideBar li {
+    list-style: none;
+    margin-right: 2em;
+}
+.sideBar img{
+  max-width: 8em;
+}
+.sideBar h3{
+  text-align: center;
+}

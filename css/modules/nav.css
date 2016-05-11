@@ -1,0 +1,10 @@
+.mainNav ul{
+  text-align: center;
+}
+.mainNav li {
+    list-style: none;
+    margin-right: 2em;
+}
+.mainNav img{
+  max-width: 2em;
+}

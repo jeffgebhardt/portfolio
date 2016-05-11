@@ -6,5 +6,10 @@ var thumbnailData = [
   {
     title: 'Salmon Cookies',
     image: 'img/salmon-cookies.png'
+  },
+  {
+    title: 'Personal Site',
+    image: 'img/personal-site.png'
   }
+
 ];
