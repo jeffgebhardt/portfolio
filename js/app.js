@@ -39,8 +39,26 @@ handleMainNav = function() {
   });
 };
 
+handleMobileNav = function() {
+  $('.mobilenav').on('click', '.tab', function(){
+    $('.mobilenav').fadeOut(500);
+    $('.top-menu').removeClass('top-animate');
+    $('body').removeClass('noscroll');
+    $('.mid-menu').removeClass('mid-animate');
+    $('.bottom-menu').removeClass('bottom-animate');
+    var val = $(this).attr('data-content');
+    $('.tab-content').hide();
+    $('.tab-content').each(function(index){
+      if($(this).attr('id') === val){
+        $(this).fadeIn('fast');
+      }
+    });
+  });
+};
+
 // Call Functions
 $(document).ready(function(){
   handleMainNav();
+  handleMobileNav();
   handleInitialHide();
 });
