@@ -1,12 +1,7 @@
-/*header*/
-header img{
-  max-width: 8em;
-  padding-left: 2%;
-}
-
 /*Main Content*/
 .mainContent {
   width: 100%;
   display: inline;
-  text-align: center;
+  text-align: left;
+  font-size: 14px;
 }
