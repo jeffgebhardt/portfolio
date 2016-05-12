@@ -1,19 +1,16 @@
+// Populate Project
 var projects = [];
 
 function Project(opts){
   this.title = opts.title;
   this.image = opts.image;
+  this.projectUrl = opts.projectUrl;
 };
 
 Project.prototype.toHtml = function(){
-  var $newProject = $('article.template').clone();
-
-  $newProject.find('h3').html(this.title);
-  $newProject.find('img').attr('src', this.image);
-
-  $newProject.removeClass('template');
-
-  return $newProject;
+  var $source = $('#projects-template').html();
+  var template = Handlebars.compile($source);
+  return template(this);
 };
 
 thumbnailData.forEach(function(ele) {
@@ -22,4 +19,28 @@ thumbnailData.forEach(function(ele) {
 
 projects.forEach(function(p){
   $('#projects').append(p.toHtml());
+});
+
+// Initial Hide
+handleInitialHide = function() {
+  $('#projects').hide();
+};
+
+// Switch Views
+handleMainNav = function() {
+  $('.mainNav').on('click', '.tab', function(){
+    var val = $(this).attr('data-content');
+    $('.tab-content').hide();
+    $('.tab-content').each(function(index){
+      if($(this).attr('id') === val){
+        $(this).fadeIn('fast');
+      }
+    });
+  });
+};
+
+// Call Functions
+$(document).ready(function(){
+  handleMainNav();
+  handleInitialHide();
 });

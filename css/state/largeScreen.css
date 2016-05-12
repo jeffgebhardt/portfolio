@@ -1,6 +1,9 @@
-header img{
-  max-width: 16em;
-}
+/*Nav*/
 .mainNav img{
   max-width: 4em;
+}
+
+.mainNav button{
+  font-size: 24px;
+  padding: 10px;
 }

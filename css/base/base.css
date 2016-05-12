@@ -1,5 +1,21 @@
+html{
+    font-family: 'Work Sans', sans-serif;
+}
 body {
     text-align: center;
+}
+header{
+  color: black;
+  background-color: rgb(118, 150, 164);
+  border-radius: 10px;
+}
+
+p{
+  padding: 2%;
+}
+.mainContainer{
+  background-color: #A78B7D;
+  border-radius: 10px;
 }
 .container {
     margin: 0 auto;

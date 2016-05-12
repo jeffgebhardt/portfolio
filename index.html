@@ -6,58 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jeff Gebhardt - Home</title>
 
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/base/base.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/layout/style.css" />
 
     <!-- Modules CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/modules/nav.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/modules/side-bar.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/modules/projects.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/modules/hamburgler.css">
 
     <!-- Media Queries CSS -->
     <link rel="stylesheet" type="text/css" media="screen and (min-width:480px)" href="css/state/mediumScreen.css" />
     <link rel="stylesheet" type="text/css" media="screen and (min-width:980px)" href="css/state/largeScreen.css" />
 
+    <script id="projects-template" type="text/x-handlebars-template">
+        <ul>
+            <article>
+                <li>
+                    <h3>{{title}}</h3>
+                    <a href='{{projectUrl}}'><img src="{{image}}"></a>
+                </li>
+            </article>
+        </ul>
+    </script>
 </head>
 
 <body>
     <div class="container">
+      <div class="mobilenav">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Github</a></li>
+          <li><a href="#">Linkedin</a></li>
+      </div>
+
+      <a href="javascript:void(0)" class="icon">
+          <div class="hamburger">
+              <div class="menui top-menu"></div>
+              <div class="menui mid-menu"></div>
+              <div class="menui bottom-menu"></div>
+          </div>
+      </a>
         <header>
             <h1>Jeff Gebhardt</h1>
-            <img src="img/profile.png" alt="Jeff Gebhardt profile picture">
             <h3>Full Stack Developer</h3>
             <nav>
                 <ul class="mainNav">
-                    <li><a href="https://www.linkedin.com/in/jeffrey-gebhardt-b1976451"><img src="img/linkedin.png" alt="Link to Linkedin"></a></li>
-                    <li><a href="https://github.com/jeffgebhardt"><img src="img/Octocat.png" alt="Link to Github"></a></li>
+                    <li class="tab" data-content="about"><a href="#"><button>About</button></a></li>
+                    <li class="tab" data-content="projects"><a href="#"><button>Projects</button></a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/jeffrey-gebhardt-b1976451"><img src="img/linkedin.png" alt="Link to Linkedin"></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/jeffgebhardt"><img src="img/Octocat.png" alt="Link to Github"></a>
+                    </li>
                 </ul>
-          </nav>
+            </nav>
         </header>
         <!-- Main Content -->
         <div class="clearFloat"></div>
         <div class="mainContainer">
             <section class="mainContent">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc justo, eu fermentum arcu venenatis sed. Etiam lorem lorem, porta nec lorem euismod, pharetra dignissim erat. Nam ut ante volutpat, tempor libero nec, laoreet lectus. Sed pretium
-                    orci sit amet pretium vehicula. Aliquam fermentum pellentesque porttitor. Duis in molestie purus. In semper odio ac dui vestibulum maximus. Morbi congue nisl nec nulla rhoncus ultrices. Donec pellentesque eros vel leo porttitor bibendum.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc justo, eu fermentum arcu venenatis sed. Etiam lorem lorem, porta nec lorem euismod, pharetra dignissim erat. Nam ut ante volutpat, tempor libero nec, laoreet lectus. Sed pretium
-                    orci sit amet pretium vehicula. Aliquam fermentum pellentesque porttitor. Duis in molestie purus. In semper odio ac dui vestibulum maximus. Morbi congue nisl nec nulla rhoncus ultrices. Donec pellentesque eros vel leo porttitor bibendum.
-                </p>
+                <div id="about" class="tab-content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc justo, eu fermentum arcu venenatis sed. Etiam lorem lorem, porta nec lorem euismod, pharetra dignissim erat. Nam ut ante volutpat, tempor libero nec, laoreet lectus. Sed pretium
+                        orci sit amet pretium vehicula. Aliquam fermentum pellentesque porttitor. Duis in molestie purus. In semper odio ac dui vestibulum maximus. Morbi congue nisl nec nulla rhoncus ultrices. Donec pellentesque eros vel leo porttitor
+                        bibendum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc justo, eu fermentum arcu venenatis sed. Etiam lorem lorem, porta nec lorem euismod, pharetra dignissim erat. Nam ut ante volutpat, tempor libero nec, laoreet lectus. Sed pretium
+                        orci sit amet pretium vehicula. Aliquam fermentum pellentesque porttitor. Duis in molestie purus. In semper odio ac dui vestibulum maximus. Morbi congue nisl nec nulla rhoncus ultrices. Donec pellentesque eros vel leo porttitor
+                        bibendum.
+                    </p>
+                </div>
+                <div id="projects" class="tab-content">
+                </div>
             </section>
-            <!-- Side Bar -->
-            <aside class="sideBar">
-                <ul id="projects">
-                  <article class="template">
-                    <li>
-                      <h3></h3>
-                      <img src="">
-                    </li>
-                  </article>
-                </ul>
-            </aside>
-
         </div>
         <footer>
             <span>Copyright - Jeff Gebhardt</span>
@@ -66,8 +93,10 @@
 
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script type="text/javascript" src="js/thumbnails.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/hamburgler.js"></script>
 </body>
 
 </html>
