@@ -25,6 +25,11 @@ projects.forEach(function(p){
   $('#projects').append(p.toHtml());
 });
 
+// Initial Hide
+handleInitialHide = function() {
+  $('#projects').hide();
+};
+
 // Switch Views
 handleMainNav = function() {
   $('.mainNav').on('click', '.tab', function(){
@@ -41,4 +46,5 @@ handleMainNav = function() {
 // Call Functions
 $(document).ready(function(){
   handleMainNav();
+  handleInitialHide();
 });

@@ -1,7 +1,7 @@
 /*Header*/
 header img {
     max-width: 12em;
-    float: left;
+    /*float: left;*/
 }
 header h1 {
     display: inline-block;
