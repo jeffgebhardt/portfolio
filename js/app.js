@@ -1,8 +1,10 @@
+// Populate Project
 var projects = [];
 
 function Project(opts){
   this.title = opts.title;
   this.image = opts.image;
+  this.projectUrl = opts.projectUrl;
 };
 
 Project.prototype.toHtml = function(){
@@ -10,6 +12,7 @@ Project.prototype.toHtml = function(){
 
   $newProject.find('h3').html(this.title);
   $newProject.find('img').attr('src', this.image);
+  $newProject.find('a').attr('href', this.projectUrl);
 
   $newProject.removeClass('template');
 
@@ -22,4 +25,28 @@ thumbnailData.forEach(function(ele) {
 
 projects.forEach(function(p){
   $('#projects').append(p.toHtml());
+});
+
+// Initial Hide
+handleInitialHide = function() {
+  $('#projects').hide();
+};
+
+// Switch Views
+handleMainNav = function() {
+  $('.mainNav').on('click', '.tab', function(){
+    var val = $(this).attr('data-content');
+    $('.tab-content').hide();
+    $('.tab-content').each(function(index){
+      if($(this).attr('id') === val){
+        $(this).fadeIn('fast');
+      }
+    });
+  });
+};
+
+// Call Functions
+$(document).ready(function(){
+  handleMainNav();
+  handleInitialHide();
 });

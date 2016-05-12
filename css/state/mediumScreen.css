@@ -1,28 +1,32 @@
-header img{
-  max-width: 12em;
-  float: left;
+/*Header*/
+header img {
+    max-width: 12em;
+    float: left;
 }
-header h1{
-  display: inline-block;
+header h1 {
+    display: inline-block;
 }
-header h3{
-  display: inline-block;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-.mainContent {
-    width: 75%;
-    text-align: left;
-}
-.mainNav li {
+header h3 {
     display: inline-block;
     margin-left: 1em;
     margin-right: 1em;
 }
-.mainNav img{
+/*Nav*/
+.mainNav li {
+  display: inline-block;
+  margin-left: .5em;
+  margin-right: .5em;
+}
+.mainNav img {
   max-width: 3em;
 }
-.sideBar {
-  float: right;
-  width: 25%;
+.mainNav button{
+  font-size: 18px;
+  padding: 7px;
+}
+
+/*Content*/
+.mainContent {
+    width: 100%;
+    text-align: left;
 }

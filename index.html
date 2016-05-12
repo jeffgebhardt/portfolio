@@ -12,7 +12,7 @@
 
     <!-- Modules CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/modules/nav.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/modules/side-bar.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/modules/projects.css" />
 
     <!-- Media Queries CSS -->
     <link rel="stylesheet" type="text/css" media="screen and (min-width:480px)" href="css/state/mediumScreen.css" />
@@ -23,41 +23,49 @@
 <body>
     <div class="container">
         <header>
-            <h1>Jeff Gebhardt</h1>
             <img src="img/profile.png" alt="Jeff Gebhardt profile picture">
+            <h1>Jeff Gebhardt</h1>
             <h3>Full Stack Developer</h3>
             <nav>
                 <ul class="mainNav">
-                    <li><a href="https://www.linkedin.com/in/jeffrey-gebhardt-b1976451"><img src="img/linkedin.png" alt="Link to Linkedin"></a></li>
-                    <li><a href="https://github.com/jeffgebhardt"><img src="img/Octocat.png" alt="Link to Github"></a></li>
+                    <li class="tab" data-content="about"><a href="#"><button>About</button></a></li>
+                    <li class="tab" data-content="projects"><a href="#"><button>Projects</button></a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/jeffrey-gebhardt-b1976451"><img src="img/linkedin.png" alt="Link to Linkedin"></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/jeffgebhardt"><img src="img/Octocat.png" alt="Link to Github"></a>
+                    </li>
                 </ul>
-          </nav>
+            </nav>
         </header>
         <!-- Main Content -->
         <div class="clearFloat"></div>
         <div class="mainContainer">
             <section class="mainContent">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc justo, eu fermentum arcu venenatis sed. Etiam lorem lorem, porta nec lorem euismod, pharetra dignissim erat. Nam ut ante volutpat, tempor libero nec, laoreet lectus. Sed pretium
-                    orci sit amet pretium vehicula. Aliquam fermentum pellentesque porttitor. Duis in molestie purus. In semper odio ac dui vestibulum maximus. Morbi congue nisl nec nulla rhoncus ultrices. Donec pellentesque eros vel leo porttitor bibendum.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc justo, eu fermentum arcu venenatis sed. Etiam lorem lorem, porta nec lorem euismod, pharetra dignissim erat. Nam ut ante volutpat, tempor libero nec, laoreet lectus. Sed pretium
-                    orci sit amet pretium vehicula. Aliquam fermentum pellentesque porttitor. Duis in molestie purus. In semper odio ac dui vestibulum maximus. Morbi congue nisl nec nulla rhoncus ultrices. Donec pellentesque eros vel leo porttitor bibendum.
-                </p>
+                <div id="about" class="tab-content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc justo, eu fermentum arcu venenatis sed. Etiam lorem lorem, porta nec lorem euismod, pharetra dignissim erat. Nam ut ante volutpat, tempor libero nec, laoreet lectus. Sed pretium
+                        orci sit amet pretium vehicula. Aliquam fermentum pellentesque porttitor. Duis in molestie purus. In semper odio ac dui vestibulum maximus. Morbi congue nisl nec nulla rhoncus ultrices. Donec pellentesque eros vel leo porttitor
+                        bibendum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra nunc justo, eu fermentum arcu venenatis sed. Etiam lorem lorem, porta nec lorem euismod, pharetra dignissim erat. Nam ut ante volutpat, tempor libero nec, laoreet lectus. Sed pretium
+                        orci sit amet pretium vehicula. Aliquam fermentum pellentesque porttitor. Duis in molestie purus. In semper odio ac dui vestibulum maximus. Morbi congue nisl nec nulla rhoncus ultrices. Donec pellentesque eros vel leo porttitor
+                        bibendum.
+                    </p>
+                </div>
+                <div id="projects" class="tab-content">
+                    <ul>
+                        <article class="template">
+                            <li>
+                                <h3></h3>
+                                <a href=''><img src=""></a>
+                            </li>
+                        </article>
+                    </ul>
+                </div>
             </section>
-            <!-- Side Bar -->
-            <aside class="sideBar">
-                <ul id="projects">
-                  <article class="template">
-                    <li>
-                      <h3></h3>
-                      <img src="">
-                    </li>
-                  </article>
-                </ul>
-            </aside>
-
         </div>
         <footer>
             <span>Copyright - Jeff Gebhardt</span>

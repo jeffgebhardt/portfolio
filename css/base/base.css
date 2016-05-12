@@ -1,6 +1,9 @@
 body {
     text-align: center;
 }
+.mainContainer{
+  background-color: #A78B7D;
+}
 .container {
     margin: 0 auto;
     width: 90%;

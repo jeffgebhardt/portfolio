@@ -1,0 +1,12 @@
+#projects {
+    width: 100%;
+}
+#projects li {
+    list-style: none;
+    margin-right: 2em;
+    margin-left: 2em;
+    text-align: center;
+}
+#projects img {
+    max-width: 8em;
+}
