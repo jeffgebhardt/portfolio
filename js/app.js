@@ -8,15 +8,9 @@ function Project(opts){
 };
 
 Project.prototype.toHtml = function(){
-  var $newProject = $('article.template').clone();
-
-  $newProject.find('h3').html(this.title);
-  $newProject.find('img').attr('src', this.image);
-  $newProject.find('a').attr('href', this.projectUrl);
-
-  $newProject.removeClass('template');
-
-  return $newProject;
+  var $source = $('#projects-template').html();
+  var template = Handlebars.compile($source);
+  return template(this);
 };
 
 thumbnailData.forEach(function(ele) {
