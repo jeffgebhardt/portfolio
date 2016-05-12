@@ -10,3 +10,8 @@
 .mainNav img{
   max-width: 2em;
 }
+
+button{
+  padding: 5px;
+  border-radius: 10px;
+}

@@ -1,7 +1,7 @@
 /*Header*/
 header img {
     max-width: 12em;
-    /*float: left;*/
+    float: left;
 }
 header h1 {
     display: inline-block;
@@ -14,11 +14,15 @@ header h3 {
 /*Nav*/
 .mainNav li {
   display: inline-block;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-left: .5em;
+  margin-right: .5em;
 }
 .mainNav img {
   max-width: 3em;
+}
+.mainNav button{
+  font-size: 18px;
+  padding: 7px;
 }
 
 /*Content*/

@@ -4,6 +4,7 @@ var projects = [];
 function Project(opts){
   this.title = opts.title;
   this.image = opts.image;
+  this.projectUrl = opts.projectUrl;
 };
 
 Project.prototype.toHtml = function(){
@@ -11,6 +12,7 @@ Project.prototype.toHtml = function(){
 
   $newProject.find('h3').html(this.title);
   $newProject.find('img').attr('src', this.image);
+  $newProject.find('a').attr('href', this.projectUrl);
 
   $newProject.removeClass('template');
 
@@ -37,7 +39,7 @@ handleMainNav = function() {
     $('.tab-content').hide();
     $('.tab-content').each(function(index){
       if($(this).attr('id') === val){
-        $(this).fadeIn(2000);
+        $(this).fadeIn('fast');
       }
     });
   });
