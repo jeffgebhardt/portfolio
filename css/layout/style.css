@@ -2,5 +2,6 @@
 .mainContent {
   width: 100%;
   display: inline;
-  text-align: center;
+  text-align: left;
+  font-size: 14px;
 }
