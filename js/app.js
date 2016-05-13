@@ -28,7 +28,7 @@ handleInitialHide = function() {
 
 // Switch Views
 handleMainNav = function() {
-  $('.mainNav').on('click', '.tab', function(){
+  $('.mainNav').on('click touchstart', '.tab', function(){
     var val = $(this).attr('data-content');
     $('.tab-content').hide();
     $('.tab-content').each(function(index){
@@ -40,12 +40,7 @@ handleMainNav = function() {
 };
 
 handleMobileNav = function() {
-  $('.mobilenav').on('click', '.tab', function(){
-    $('.mobilenav').fadeOut(500);
-    $('.top-menu').removeClass('top-animate');
-    $('body').removeClass('noscroll');
-    $('.mid-menu').removeClass('mid-animate');
-    $('.bottom-menu').removeClass('bottom-animate');
+  $('.mobilenav').on('click touchstart', '.tab', function(){
     var val = $(this).attr('data-content');
     $('.tab-content').hide();
     $('.tab-content').each(function(index){
@@ -53,6 +48,11 @@ handleMobileNav = function() {
         $(this).fadeIn('fast');
       }
     });
+    $('.mobilenav').fadeOut(500);
+    $('.top-menu').removeClass('top-animate');
+    $('body').removeClass('noscroll');
+    $('.mid-menu').removeClass('mid-animate');
+    $('.bottom-menu').removeClass('bottom-animate');
   });
 };
 
