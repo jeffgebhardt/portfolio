@@ -48,6 +48,7 @@ handleMobileNav = function() {
         $(this).fadeIn('fast');
       }
     });
+
     $('.mobilenav').fadeOut(500);
     $('.top-menu').removeClass('top-animate');
     $('body').removeClass('noscroll');
@@ -55,6 +56,7 @@ handleMobileNav = function() {
     $('.bottom-menu').removeClass('bottom-animate');
   });
 };
+
 
 // Call Functions
 $(document).ready(function(){
