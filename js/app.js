@@ -28,7 +28,7 @@ handleInitialHide = function() {
 
 // Switch Views
 handleMainNav = function() {
-  $('.mainNav').on('click', '.tab', function(){
+  $('.mainNav').on('click touchstart', '.tab', function(){
     var val = $(this).attr('data-content');
     $('.tab-content').hide();
     $('.tab-content').each(function(index){
@@ -40,7 +40,7 @@ handleMainNav = function() {
 };
 
 handleMobileNav = function() {
-  $('.mobilenav').on('click', '.tab', function(){
+  $('.mobilenav').on('click touchstart', '.tab', function(){
     var val = $(this).attr('data-content');
     $('.tab-content').hide();
     $('.tab-content').each(function(index){
