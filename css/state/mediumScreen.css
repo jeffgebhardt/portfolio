@@ -33,3 +33,6 @@ header h3 {
     width: 100%;
     text-align: left;
 }
+#projects img{
+  max-width: 24em;
+}

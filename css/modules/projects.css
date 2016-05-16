@@ -1,12 +1,24 @@
 #projects {
     width: 100%;
 }
+#projects ul{
+  padding: 0;
+
+}
 #projects li {
     list-style: none;
-    margin-right: 2em;
-    margin-left: 2em;
     text-align: center;
 }
 #projects img {
-    max-width: 8em;
+    max-width: 14em;
+    margin-bottom: 1em;
+}
+#projects p{
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align: left;
+  background-color: #FF6600;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  color: black;
 }

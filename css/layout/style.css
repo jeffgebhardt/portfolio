@@ -27,3 +27,14 @@ p{
 ul{
   margin-top: 0;
 }
+#about{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+#about p{
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  background-color: #FF6600;
+  color: black;
+}

@@ -3,6 +3,7 @@ var projects = [];
 
 function Project(opts){
   this.title = opts.title;
+  this.projectInfo = opts.projectInfo;
   this.image = opts.image;
   this.projectUrl = opts.projectUrl;
 };

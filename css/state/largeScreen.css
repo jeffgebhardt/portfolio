@@ -7,3 +7,8 @@
   font-size: 24px;
   padding: 10px;
 }
+
+/*Projects*/
+#projects img{
+  max-width: 28em;
+}
