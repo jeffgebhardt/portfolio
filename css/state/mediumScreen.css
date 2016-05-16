@@ -21,11 +21,12 @@ header h3 {
   margin-right: .5em;
 }
 .mainNav img {
-  max-width: 3em;
+  height 40px;
 }
 .mainNav button{
   font-size: 18px;
-  padding: 7px;
+  padding: 5px;
+  height: 40px;
 }
 
 /*Content*/

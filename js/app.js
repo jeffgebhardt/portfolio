@@ -56,6 +56,13 @@ handleMobileNav = function() {
     $('.mid-menu').removeClass('mid-animate');
     $('.bottom-menu').removeClass('bottom-animate');
   });
+
+  $('#linkedin').on('click touchstart', function(){
+    window.location = 'https://www.linkedin.com/in/jeffrey-gebhardt-b1976451';
+  });
+  $('#github').on('click touchstart', function(){
+    window.location = 'https://github.com/jeffgebhardt';
+  });
 };
 
 
