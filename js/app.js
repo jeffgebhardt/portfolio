@@ -53,14 +53,16 @@ handleMobileNav = function() {
 
 // Handle JSON
 Project.loadAll = function(dataWePassIn) {
-  JSON.parse(dataWePassIn).forEach(function(ele) {
-    projects.push(new Project(ele));
+  projects = JSON.parse(dataWePassIn).map(function(ele){
+    return new Project(ele);
   });
 };
 
 Project.appendAll = function(dataToAppend) {
-  dataToAppend.forEach(function(p){
-    $('#projects').append(p.toHtml());
+  // dataToAppend.forEach(function(p){
+  //   $('#projects').append(p.toHtml());
+  dataToAppend.map(function(p) {
+    return $('#projects').append(p.toHtml());
   });
 };
 
