@@ -14,13 +14,7 @@ Project.prototype.toHtml = function(){
   return template(this);
 };
 
-// thumbnailData.forEach(function(ele) {
-//   projects.push(new Project(ele));
-// });
 
-// projects.forEach(function(p){
-//   $('#projects').append(p.toHtml());
-// });
 
 // Initial Hide
 handleInitialHide = function() {
@@ -59,18 +53,38 @@ handleMobileNav = function() {
 
 // Handle JSON
 Project.loadAll = function(dataWePassIn) {
-  dataWePassIn.forEach(function(ele) {
+  JSON.parse(dataWePassIn).forEach(function(ele) {
     projects.push(new Project(ele));
   });
 };
 
-Project.fetchAll = function(){
-  console.log('Retrieveing JSON data...');
-  $.getJSON('data/projectsData.json', function(data){
-    console.log('Retrieved data from JSON file: ' + data);
-    Project.loadAll(data);
-    localStorage.setItem('data', JSON.stringify(projects));
+Project.appendAll = function(dataToAppend) {
+  dataToAppend.forEach(function(p){
+    $('#projects').append(p.toHtml());
   });
+};
+
+Project.fetchAll = function(){
+  if (localStorage.data) {
+    console.log('Local Storage Exists');
+    var localData = localStorage.getItem('data');
+    console.log(localData);
+    Project.loadAll(localData);
+    //Append to HTML
+    Project.appendAll(projects);
+
+  }
+  else {
+    $.getJSON('data/projects-data.json', function(data){
+      console.log('Retrieved data from JSON file...');
+      Project.loadAll(JSON.stringify(data));
+      Project.appendAll(projects);
+      //Set Local Storage
+      localStorage.setItem('data', JSON.stringify(projects));
+      console.log('Set Local Data');
+
+    });
+  }
 };
 
 
