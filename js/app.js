@@ -26,7 +26,7 @@ handleMainNav = function() {
   $('.mainNav').on('click touchstart', '.tab', function(){
     var val = $(this).attr('data-content');
     $('.tab-content').hide();
-    $('.tab-content').each(function(index){
+    $('.tab-content').map(function(index){
       if($(this).attr('id') === val){
         $(this).fadeIn('fast');
       }
@@ -38,7 +38,7 @@ handleMobileNav = function() {
   $('.mobilenav').on('click touchstart', '.tab', function(){
     var val = $(this).attr('data-content');
     $('.tab-content').hide();
-    $('.tab-content').each(function(index){
+    $('.tab-content').map(function(index){
       if($(this).attr('id') === val){
         $(this).fadeIn('fast');
       }
@@ -59,8 +59,6 @@ Project.loadAll = function(dataWePassIn) {
 };
 
 Project.appendAll = function(dataToAppend) {
-  // dataToAppend.forEach(function(p){
-  //   $('#projects').append(p.toHtml());
   dataToAppend.map(function(p) {
     return $('#projects').append(p.toHtml());
   });
@@ -77,7 +75,7 @@ Project.fetchAll = function(){
         console.log('Current eTag = ' + eTag);
         var compareETag = JSON.parse(localStorage.getItem('eTag1'));
         console.log('Compare eTag = ' + compareETag);
-        // console.log(message, eTag);
+
         if (eTag !== compareETag) {
           console.log('Changes to JSON file detected');
           console.log('Retrieved data from JSON file...');
