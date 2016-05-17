@@ -4,6 +4,7 @@ var projects = [];
 function Project(opts){
   this.title = opts.title;
   this.image = opts.image;
+  this.projectInfo = opts.projectInfo;
   this.projectUrl = opts.projectUrl;
 };
 
@@ -13,13 +14,7 @@ Project.prototype.toHtml = function(){
   return template(this);
 };
 
-thumbnailData.forEach(function(ele) {
-  projects.push(new Project(ele));
-});
 
-projects.forEach(function(p){
-  $('#projects').append(p.toHtml());
-});
 
 // Initial Hide
 handleInitialHide = function() {
@@ -55,6 +50,69 @@ handleMobileNav = function() {
     $('.bottom-menu').removeClass('bottom-animate');
   });
 };
+
+// Handle JSON
+Project.loadAll = function(dataWePassIn) {
+  JSON.parse(dataWePassIn).forEach(function(ele) {
+    projects.push(new Project(ele));
+  });
+};
+
+Project.appendAll = function(dataToAppend) {
+  dataToAppend.forEach(function(p){
+    $('#projects').append(p.toHtml());
+  });
+};
+
+Project.fetchAll = function(){
+  if (localStorage.data) {
+    console.log('Local Storage DOES Exist');
+
+    $.ajax({
+      url: 'data/projects-data.json',
+      success: function (data, message, xhr) {
+        var eTag = xhr.getResponseHeader('eTag');
+        console.log('Current eTag = ' + eTag);
+        var compareETag = JSON.parse(localStorage.getItem('eTag1'));
+        console.log('Compare eTag = ' + compareETag);
+        // console.log(message, eTag);
+        if (eTag !== compareETag) {
+          console.log('Changes to JSON file detected');
+          console.log('Retrieved data from JSON file...');
+          Project.loadAll(JSON.stringify(data));
+          Project.appendAll(projects);
+          //Set Local Storage
+          localStorage.setItem('data', JSON.stringify(projects));
+          console.log('Setting Local Data...');
+          Project.appendAll(projects);
+        }
+        else {
+          console.log('NO change to JSON Data');
+          var localData = localStorage.getItem('data');
+          console.log('Retriving Local Data');
+          Project.loadAll(localData);
+          //Append to HTML
+        }
+        Project.appendAll(projects);
+      }
+    });
+  }
+  else {
+    $.getJSON('data/projects-data.json', function(data){
+      console.log('Retrieved data from JSON file...');
+      Project.loadAll(JSON.stringify(data));
+      Project.appendAll(projects);
+      //Set Local Storage
+      localStorage.setItem('data', JSON.stringify(projects));
+      console.log('Locale Storage DOES NOT exist.');
+      console.log('Setting Local Data...');
+    }).success(function(data, message, xhr) {
+      var eTag1 = xhr.getResponseHeader('eTag');
+      localStorage.setItem('eTag1', JSON.stringify(eTag1));
+    });
+  }
+};
+
 
 // Call Functions
 $(document).ready(function(){

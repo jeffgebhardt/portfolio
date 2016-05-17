@@ -30,3 +30,14 @@ $(document).keydown(function(e) {
     $('.bottom-menu').removeClass('bottom-animate');
   }
 });
+
+$(document).ready(function() {
+  $('.icon').on('click touchstart', function(e) {
+    $('.mobilenav').fadeToggle(500);
+    $('.top-menu').toggleClass('top-animate');
+    $('body').toggleClass('noscroll');
+    $('.mid-menu').toggleClass('mid-animate');
+    $('.bottom-menu').toggleClass('bottom-animate');
+    e.preventDefault();
+  });
+});
