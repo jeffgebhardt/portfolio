@@ -14,13 +14,13 @@ Project.prototype.toHtml = function(){
   return template(this);
 };
 
-thumbnailData.forEach(function(ele) {
-  projects.push(new Project(ele));
-});
+// thumbnailData.forEach(function(ele) {
+//   projects.push(new Project(ele));
+// });
 
-projects.forEach(function(p){
-  $('#projects').append(p.toHtml());
-});
+// projects.forEach(function(p){
+//   $('#projects').append(p.toHtml());
+// });
 
 // Initial Hide
 handleInitialHide = function() {
@@ -56,6 +56,23 @@ handleMobileNav = function() {
     $('.bottom-menu').removeClass('bottom-animate');
   });
 };
+
+// Handle JSON
+Project.loadAll = function(dataWePassIn) {
+  dataWePassIn.forEach(function(ele) {
+    projects.push(new Project(ele));
+  });
+};
+
+Project.fetchAll = function(){
+  console.log('Retrieveing JSON data...');
+  $.getJSON('data/projectsData.json', function(data){
+    console.log('Retrieved data from JSON file: ' + data);
+    Project.loadAll(data);
+    localStorage.setItem('data', JSON.stringify(projects));
+  });
+};
+
 
 // Call Functions
 $(document).ready(function(){
