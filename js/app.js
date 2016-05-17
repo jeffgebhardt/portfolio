@@ -65,6 +65,45 @@ handleMobileNav = function() {
   });
 };
 
+Projects.fetchAll = function() {
+  if (localStorage.data) {
+
+    $.ajax({
+      url: 'data/hackerIpsum.json',
+      success: function (data, message, xhr) {
+        var eTag = xhr.getResponseHeader('eTag');
+        console.log('eTag = ' + eTag);
+        var compareETag = JSON.parse(localStorage.getItem('eTag1'));
+        console.log('eTag1 = ' + compareETag);
+
+        if (eTag !== compareETag) {
+          console.log('Etags are not the same');
+          $.getJSON('data/projectsData.json', function(data){
+            Projects(data);
+            localStorage.setItem('data', JSON.stringify(Projects));
+            projects.toHtml();
+          });
+
+        } else {
+          var localData = localStorage.getItem('data');
+          Projects(JSON.parse(localData));
+        }
+        Projects.toHtml();
+      }
+    });
+
+  } else {
+    $.getJSON('data/hackerIpsum.json', function(data){
+      Projects(data);
+      localStorage.setItem('data', JSON.stringify(Projects));
+      Projects.toHtml();
+    }).success(function(data, message, xhr) {
+      var eTag1 = xhr.getResponseHeader('eTag');
+      localStorage.setItem('eTag1', JSON.stringify(eTag1));
+    });
+  }
+};
+
 
 // Call Functions
 $(document).ready(function(){
