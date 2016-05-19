@@ -1,7 +1,8 @@
 (function(module){
+  console.log('Admin.js file starts running...');
 
   Project.test = function(){
-    console.log(Project.All);
+    console.log('Admin test function running...');
   };
 
 

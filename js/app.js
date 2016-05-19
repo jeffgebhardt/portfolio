@@ -109,6 +109,7 @@
 
           //Load from Admin.js
           Project.test();
+
         }
       });
     }
