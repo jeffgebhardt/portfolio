@@ -1,7 +1,8 @@
 (function(module){
-  // Populate Project
-  var projects = [];
+  //Projects Array
+  Project.All = [];
 
+  //Projects Constructor
   function Project(opts){
     this.title = opts.title;
     this.image = opts.image;
@@ -9,13 +10,12 @@
     this.projectUrl = opts.projectUrl;
   };
 
+  //AHandle HTML Template
   Project.prototype.toHtml = function(){
     var $source = $('#projects-template').html();
     var template = Handlebars.compile($source);
     return template(this);
   };
-
-
 
   // Initial Hide
   handleInitialHide = function() {
@@ -35,6 +35,7 @@
     });
   };
 
+  //Handle the Hamburger Nav
   handleMobileNav = function() {
     $('.mobilenav').on('click touchstart', '.tab', function(){
       var val = $(this).attr('data-content');
@@ -51,6 +52,7 @@
       $('.bottom-menu').removeClass('bottom-animate');
     });
 
+    //Linkedin and Github Links
     $('#linkedin').on('touchstart', function(){
       window.location = 'https://www.linkedin.com/in/jeffrey-gebhardt-b1976451';
     });
@@ -59,19 +61,21 @@
     });
   };
 
-  // Handle JSON
+  //Load JSON Data
   Project.loadAll = function(dataWePassIn) {
-    projects = JSON.parse(dataWePassIn).map(function(ele){
+    Project.All = JSON.parse(dataWePassIn).map(function(ele){
       return new Project(ele);
     });
   };
 
+  //Append JSON Data to DOM
   Project.appendAll = function(dataToAppend) {
     dataToAppend.map(function(p) {
       return $('#projects').append(p.toHtml());
     });
   };
 
+  //Retrive Data from JSON/Local Storage
   Project.fetchAll = function(){
     if (localStorage.data) {
       console.log('Local Storage DOES Exist');
@@ -89,11 +93,11 @@
             console.log('Changes to JSON file detected');
             console.log('Retrieved data from JSON file...');
             Project.loadAll(JSON.stringify(data));
-            Project.appendAll(projects);
+            Project.appendAll(Project.All);
             //Set Local Storage
-            localStorage.setItem('data', JSON.stringify(projects));
+            localStorage.setItem('data', JSON.stringify(Project.All));
             console.log('Setting Local Data...');
-            Project.appendAll(projects);
+            Project.appendAll(Project.All);
           }
           else {
             console.log('NO change to JSON Data');
@@ -101,7 +105,10 @@
             console.log('Retriving Local Data');
             Project.loadAll(localData);
           }
-          Project.appendAll(projects);
+          Project.appendAll(Project.All);
+
+          //Load from Admin.js
+          Project.test();
         }
       });
     }
@@ -109,8 +116,8 @@
       $.getJSON('data/projects-data.json', function(data){
         console.log('Retrieved data from JSON file...');
         Project.loadAll(JSON.stringify(data));
-        Project.appendAll(projects);
-        localStorage.setItem('data', JSON.stringify(projects));
+        Project.appendAll(Project.All);
+        localStorage.setItem('data', JSON.stringify(Project.All));
         console.log('Locale Storage DOES NOT exist.');
         console.log('Setting Local Data...');
       })
@@ -126,6 +133,7 @@
     handleMainNav();
     handleMobileNav();
     handleInitialHide();
+    Project.fetchAll();
   });
 
   module.Project = Project;
