@@ -1,3 +1,4 @@
+//Set Namespace
 (function(module){
   //Projects Array
   Project.All = [];
@@ -17,51 +18,7 @@
     return template(this);
   };
 
-  // Initial Hide
-  handleInitialHide = function() {
-    $('#projects').hide();
-  };
-
-  // Switch Views
-  handleMainNav = function() {
-    $('.mainNav').on('click touchstart', '.tab', function(){
-      var val = $(this).attr('data-content');
-      $('.tab-content').hide();
-      $('.tab-content').map(function(index){
-        if($(this).attr('id') === val){
-          $(this).fadeIn('fast');
-        }
-      });
-    });
-  };
-
-  //Handle the Hamburger Nav
-  handleMobileNav = function() {
-    $('.mobilenav').on('click touchstart', '.tab', function(){
-      var val = $(this).attr('data-content');
-      $('.tab-content').hide();
-      $('.tab-content').map(function(index){
-        if($(this).attr('id') === val){
-          $(this).fadeIn('fast');
-        }
-      });
-      $('.mobilenav').fadeOut(500);
-      $('.top-menu').removeClass('top-animate');
-      $('body').removeClass('noscroll');
-      $('.mid-menu').removeClass('mid-animate');
-      $('.bottom-menu').removeClass('bottom-animate');
-    });
-
-    //Linkedin and Github Links
-    $('#linkedin').on('touchstart', function(){
-      window.location = 'https://www.linkedin.com/in/jeffrey-gebhardt-b1976451';
-    });
-    $('#github').on('touchstart', function(){
-      window.location = 'https://github.com/jeffgebhardt';
-    });
-  };
-
-  //Load JSON Data
+  //Load JSON Data into Project.All array
   Project.loadAll = function(dataWePassIn) {
     Project.All = JSON.parse(dataWePassIn).map(function(ele){
       return new Project(ele);
@@ -75,7 +32,7 @@
     });
   };
 
-  //Retrive Data from JSON/Local Storage
+  //Retrive Data from JSON or Local Storage
   Project.fetchAll = function(){
     if (localStorage.data) {
       console.log('Local Storage DOES Exist');
@@ -130,12 +87,7 @@
   };
 
   // Call Functions
-  $(document).ready(function(){
-    handleMainNav();
-    handleMobileNav();
-    handleInitialHide();
-    Project.fetchAll();
-  });
+  Project.fetchAll();
 
   module.Project = Project;
 })(window);
