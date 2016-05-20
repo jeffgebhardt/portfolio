@@ -10,7 +10,7 @@
     this.projectUrl = opts.projectUrl;
   };
 
-  //AHandle HTML Template
+  //Handle HTML Template
   Project.prototype.toHtml = function(){
     var $source = $('#projects-template').html();
     var template = Handlebars.compile($source);
