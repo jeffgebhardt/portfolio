@@ -1,0 +1,40 @@
+/*Main Content*/
+.mainContent {
+  width: 100%;
+  display: inline;
+  text-align: left;
+  font-size: 14px;
+}
+
+.mainNav{
+  display: none;
+}
+h1{
+  margin-top: 0;
+  padding-top: .4em;
+  margin-bottom: 0;
+}
+h3{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+p{
+  margin-top: 0;
+}
+ul{
+  margin-top: 0;
+}
+#about{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+#about p{
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  background-color: #FF6600;
+  color: black;
+}
