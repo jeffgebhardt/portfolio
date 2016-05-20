@@ -1,0 +1,28 @@
+html{
+    font-family: 'Work Sans', sans-serif;
+}
+body {
+    text-align: center;
+}
+header{
+  color: white;
+  background-color: #000000;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+p{
+  padding: 2%;
+}
+.mainContainer{
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+}
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+.clearFloat{
+  clear: both;
+}
