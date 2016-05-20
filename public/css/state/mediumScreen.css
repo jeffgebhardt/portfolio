@@ -1,0 +1,39 @@
+header h1 {
+    display: inline-block;
+}
+header h3 {
+    display: inline-block;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+/*Nav*/
+.icon{
+  display: none;
+}
+.mainNav{
+  display: block;
+  margin-bottom: 0;
+}
+
+.mainNav li {
+  display: inline-block;
+  margin-left: .5em;
+  margin-right: .5em;
+}
+.mainNav img {
+  height 40px;
+}
+.mainNav button{
+  font-size: 18px;
+  padding: 5px;
+  height: 40px;
+}
+
+/*Content*/
+.mainContent {
+    width: 100%;
+    text-align: left;
+}
+#projects img{
+  max-width: 24em;
+}

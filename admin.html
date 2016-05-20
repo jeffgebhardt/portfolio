@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jeff Gebhardt - Home</title>
+    <title>Jeff Gebhardt</title>
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
@@ -22,29 +22,23 @@
     <link rel="stylesheet" type="text/css" media="screen and (min-width:480px)" href="css/state/mediumScreen.css" />
     <link rel="stylesheet" type="text/css" media="screen and (min-width:980px)" href="css/state/largeScreen.css" />
 
-</head>
+    <body>
+        <!-- Javascript -->
+        <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDwwWCnlAiNJTWuSUVC_Bj6ffMFwHxH7VM",
+                authDomain: "portfolio-1317.firebaseapp.com",
+                databaseURL: "https://portfolio-1317.firebaseio.com",
+                storageBucket: "portfolio-1317.appspot.com",
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script async type="text/javascript" src="js/app.js"></script>
+        <script async type="text/javascript" src="js/admin.js"></script>
 
-<body>
-    <div class="mobilenav">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Github</a></li>
-        <li><a href="#">Linkedin</a></li>
-    </div>
-
-    <a href="javascript:void(0)" class="icon">
-        <div class="hamburger">
-            <div class="menui top-menu"></div>
-            <div class="menui mid-menu"></div>
-            <div class="menui bottom-menu"></div>
-        </div>
-    </a>
-
-
-    <!-- Javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/hamburgler.js"></script>
-
-</body>
+    </body>
 
 </html>
