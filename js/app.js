@@ -86,6 +86,7 @@
     }
   };
 
+
   // Call Functions
   Project.fetchAll();
 
