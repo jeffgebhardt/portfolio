@@ -3,29 +3,9 @@ handleInitialHide = function() {
   $('#projects').hide();
 };
 
-// Switch Views
-handleMainNav = function() {
-  $('.mainNav').on('click touchstart', '.tab', function(){
-    var val = $(this).attr('data-content');
-    $('.tab-content').hide();
-    $('.tab-content').map(function(index){
-      if($(this).attr('id') === val){
-        $(this).fadeIn('fast');
-      }
-    });
-  });
-};
-
 //Handle the Hamburger Nav
 handleMobileNav = function() {
   $('.mobilenav').on('click touchstart', '.tab', function(){
-    var val = $(this).attr('data-content');
-    $('.tab-content').hide();
-    $('.tab-content').map(function(index){
-      if($(this).attr('id') === val){
-        $(this).fadeIn('fast');
-      }
-    });
     $('.mobilenav').fadeOut(500);
     $('.top-menu').removeClass('top-animate');
     $('body').removeClass('noscroll');
@@ -44,7 +24,6 @@ handleMobileNav = function() {
 
 // Call Functions
 $(document).ready(function(){
-  handleMainNav();
   handleMobileNav();
   handleInitialHide();
 });
