@@ -64,9 +64,6 @@
           }
           Project.appendAll(Project.All);
 
-          //Load from Admin.js
-          Project.test();
-
         }
       });
     }
@@ -85,10 +82,6 @@
       });
     }
   };
-
-
-  // Call Functions
-  Project.fetchAll();
 
   module.Project = Project;
 })(window);
