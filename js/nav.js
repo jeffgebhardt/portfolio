@@ -5,7 +5,7 @@ handleInitialHide = function() {
 
 //Handle the Hamburger Nav
 handleMobileNav = function() {
-  $('.mobilenav').on('click touchstart', '.tab', function(){
+  $('.mobilenav').on('click touchstart', function(){
     $('.mobilenav').fadeOut(500);
     $('.top-menu').removeClass('top-animate');
     $('body').removeClass('noscroll');
@@ -24,6 +24,5 @@ handleMobileNav = function() {
 
 // Call Functions
 $(document).ready(function(){
-  handleMobileNav();
   handleInitialHide();
 });
