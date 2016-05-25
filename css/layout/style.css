@@ -1,40 +1,47 @@
 /*Main Content*/
+
 .mainContent {
-  width: 100%;
-  display: inline;
-  text-align: left;
-  font-size: 14px;
+    width: 100%;
+    display: inline;
+    text-align: left;
+    font-size: 14px;
 }
-
-.mainNav{
-  display: none;
+.mainNav {
+    display: none;
 }
-h1{
-  margin-top: 0;
-  padding-top: .4em;
-  margin-bottom: 0;
+h1 {
+    margin-top: 0;
+    padding-top: .4em;
+    margin-bottom: 0;
+    display: block;
 }
-h3{
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 1em;
-  padding-top: 1em;
+h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    display: block;
 }
-
-p{
-  margin-top: 0;
+p {
+    margin-top: 0;
 }
-ul{
-  margin-top: 0;
+ul {
+    margin-top: 0;
 }
-#about{
-  padding-top: 1em;
-  padding-bottom: 1em;
+#about {
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
-#about p{
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 1em;
-  background-color: #FF6600;
-  color: black;
+#about p {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    color: black;
+}
+.mainContainer {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.clearFloat {
+    clear: both;
 }

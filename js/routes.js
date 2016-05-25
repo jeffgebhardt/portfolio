@@ -6,8 +6,6 @@ page();
 function about() {
   $('#projects').hide();
   $('#about').fadeIn('fast');
-
-  handleMobileNav();
 };
 
 function projects() {
@@ -15,6 +13,4 @@ function projects() {
   $('#projects').fadeIn('fast');
 
   Project.fetchAll();
-
-  handleMobileNav();
 };

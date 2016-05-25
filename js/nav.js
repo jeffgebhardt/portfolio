@@ -25,4 +25,5 @@ handleMobileNav = function() {
 // Call Functions
 $(document).ready(function(){
   handleInitialHide();
+  handleMobileNav();
 });

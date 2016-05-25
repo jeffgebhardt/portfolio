@@ -5,24 +5,22 @@ body {
     text-align: center;
 }
 header{
-  color: white;
-  background-color: #000000;
+  color: black;
+  background-color: #FF6600;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-p{
-  padding: 2%;
+footer{
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 1em;
 }
-.mainContainer{
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
 
+p{
+  padding: .5em;
 }
-.container {
-    margin: 0 auto;
-    width: 90%;
-}
-.clearFloat{
-  clear: both;
+
+nav{
+  display: inline-block;
 }
