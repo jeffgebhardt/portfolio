@@ -13,6 +13,4 @@ function projects() {
   $('#projects').fadeIn('fast');
 
   Project.fetchAll();
-  repos.requestRepos();
-
 };
