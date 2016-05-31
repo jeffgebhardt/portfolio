@@ -1,8 +1,8 @@
 header h1 {
-    display: inline-block;
+    display: block;
 }
 header h3 {
-    display: inline-block;
+    display: block;
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -11,8 +11,8 @@ header h3 {
   display: none;
 }
 .mainNav{
-  display: block;
   margin-bottom: 0;
+  display: inline-block;
 }
 
 .mainNav li {
@@ -21,15 +21,19 @@ header h3 {
   margin-right: .5em;
 }
 .mainNav img {
-  max-width: 3em;
+  height 40px;
 }
 .mainNav button{
   font-size: 18px;
-  padding: 7px;
+  padding: 5px;
+  height: 40px;
 }
 
 /*Content*/
 .mainContent {
     width: 100%;
     text-align: left;
+}
+#projects img{
+  max-width: 24em;
 }
